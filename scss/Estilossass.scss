@@ -1,0 +1,460 @@
+@import "variables/variables";
+@import "funciones/funciones";
+@import "grupos/fixture";
+@import "contador/contador";
+@import "movil/_media-movil";
+@import "escritorio/_media-escritorio";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* css general */
+/* Aca meto un anidamiento de todos los elementos dentro del body, para usar el concepto, pero no quiero romper 
+las cosas que ya funcionan, para la entrega final voy a hacer los elementos nuevos, directamente anidados (el contador y el fixture) */
+
+body{
+    background-color: white;
+
+
+    header{
+        background-color: $arg;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #logo{
+        height: 180px;
+        width: 180px;
+    }
+
+    #logo-mundial{
+        height: 100%;
+        width: 100%;
+    }
+
+    h1{
+        background-color: $arg;
+        color: white;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 70px;
+        margin: 10px;
+    }
+
+    nav{
+        background-color: $arg;
+    }
+
+    #ul-nav{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    #li-nav{
+        list-style-type: none;
+        margin: 15px;
+    }
+
+    a{
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+
+    a:hover{
+        text-decoration: underline solid white;
+        color: rgb(30, 30, 128);
+    }
+
+    #main-index{
+        height: 1000px;
+        display:grid;
+    }
+
+    #contenedor-contador{
+        grid-area: a2;
+        justify-self: center;
+        align-self: center;
+        height: 80%;
+        width: 90%;
+    }
+
+    #contador{
+        height: 100%;
+        width: 100%;
+    }
+
+    #noticias{
+        grid-area: a5;
+        justify-self: center;
+        align-self: center;
+        height: 50%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(240, 240, 240);
+        padding: 20px;
+    }
+
+    #ultimas-noticias{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: start;
+    }
+
+    .noticias{
+        text-align: start;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .titulo-noticias{
+        text-align: start;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+    }
+
+    #parrafo-noticia{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #publicidad1-index{
+        height: 900px;
+        width: 90%;
+        grid-area: a1;
+        justify-self: center;
+        align-self: center;
+    }
+
+
+    #publicidad1{
+        width: 90%;
+        height: 90%;
+    }
+
+    #publicidad2-index{
+        height: 900px;
+        width: 90%;
+        grid-area: a3;
+        justify-self: center;
+        align-self: center;
+    }
+
+    #publicidad2{
+        width: 90%;
+        height: 90%;
+    }
+
+
+    #link-noticia{
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: small;
+        color: blue;
+    }
+
+    footer{
+        background-color: $arg;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        
+    #parrafo_footer{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+    /* Estilos de la pagina ESTADIOS */
+
+    #main-estadios{
+        height: 1000px;
+        display: grid;
+    }
+
+    /* Estilos de la pagina CONTACTO */
+
+    #fondo-messi{
+        width: 100%;
+        height: 1000px;
+        background-image: url(../multimedia/fondo-messi.jpg);
+        background-size:contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 10% 80%;
+        grid-template-areas: "a1"
+                            "a2";
+        align-items: center;
+        justify-content: center;
+    }
+
+    #titulo-contacto{
+        display: flex;
+        flex-wrap: nowrap;
+        grid-area: a1;
+    }
+
+    #formulario{
+        grid-area: a2;
+        justify-self: start;
+    }
+
+    /* Vista para movil */
+
+    @media only screen and (max-width: 600px) {
+
+        header{
+            border-bottom: solid white;
+        }
+
+        h1{
+            background-color: $arg;
+            font-size: 30px;
+        }
+
+        #ul-nav{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        main{
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 40% 60%;
+            grid-template-areas: 
+                "a2 a1" 
+                "a5 a1";
+            
+        }
+
+        #publicidad1{
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+        #publicidad2-index{
+            height: 900px;
+            width: 90%;
+            grid-area: a1;
+            justify-self: center;
+            align-self: center;
+        }
+
+
+            /* MEDIA-ESTADIOS-MOVIL */
+
+        #main-estadios{
+            height: 1200px;
+            grid-template-columns: 100%;
+            grid-template-rows: 10% 45% 45%;
+            grid-template-areas: "a1"
+                                "a2" 
+                                "a3";
+        }
+
+        #titulo-estadios{
+            text-align: center;
+            grid-area: a1;
+        }
+
+
+        #tabla-estadios{
+            grid-area: a2;
+        }
+
+        #mapa-qatar{
+            grid-area: a3;
+            margin-bottom: 10px;
+        }
+
+        /* PAGINA CONTACTO */
+
+        #fondo-messi{
+            height: 700px;
+        }
+
+        #formulario{ 
+            align-self: flex-start;
+        }
+
+        /* PAGINA-RECOMENDACIONES-MOVIL */
+
+        #main-reco{
+            height: 1000px;
+            display: grid;
+            grid-template-columns: 80%;
+            grid-template-rows: 10% 40% 40%;
+            grid-template-areas: "a1"
+                                "a2" 
+                                "a3";
+            justify-content: center;
+            align-content: center;
+        }
+        
+        #titulo-recomendaciones{
+            grid-area: a1;
+        
+        }
+
+        #div-hacer{
+            grid-area: a2;
+        }
+
+        #div-nohacer{
+            grid-area: a3;
+        }
+    }
+
+    /* Vista para PC */
+
+    @media screen and (min-width: 600px) {
+
+        #ul-nav{
+            flex-direction: row;
+        }
+
+        main{
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            grid-template-rows: 50% 50%;
+            grid-template-areas: 
+                "a1 a2 a3" 
+                "a1 a5 a3";
+                align-items: center;
+                justify-items: center;
+        }
+
+        #main-estadios{
+            height: 1000px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 10% 80%;
+            grid-template-areas: "a1 a1"
+                                "a2 a3";
+        }
+        
+        #titulo-estadios{
+            text-align: center;
+            grid-area: a1;
+        }
+        
+        
+        #tabla-estadios{
+            grid-area: a2;
+        }
+        
+        #mapa-qatar{
+            height: 80%;
+            width: 80%;
+            grid-area: a3;
+        }
+
+        #main-reco{
+            height: 800px;
+            display: grid;
+            grid-template-columns: 40% 40%;
+            grid-template-rows: 10% 80%;
+            grid-template-areas: "a1 a1"
+                                "a2 a3";
+            justify-content: center;
+            align-content: center;
+        }
+    }
+
+
+
+    /* ESTILO VIEJO DE LA PRIMERA ENTREGA SIN CAMBIAR A FLEX Y GRID */
+
+    #main-reco{
+        height: 800px;
+        display: grid;
+
+    }
+
+    #titulo-recomendaciones{
+        display: flex;
+        grid-area: a1;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #div-hacer{
+        grid-area: a2;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #div-nohacer{
+        grid-area: a3;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #titulo-hacer{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #titulo-nohacer{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    #li-recomendaciones{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #ul-recomendaciones{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #main-fixture{
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 10% 80%;
+        grid-template-areas: "a1"
+                            "a2";
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #titulo-fixture{
+        grid-area: a1;
+        text-align: center;
+    }
+
+    #contenedor-fixture{
+        grid-area: a2;
+        height: 90%;
+    }
+
+    #fixture{
+        height: 100%;
+        width: 100%;
+    }
+}

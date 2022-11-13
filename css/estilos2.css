@@ -1,0 +1,287 @@
+/* voy a hacer un mixin para crear el fixture a mano, van a ser 8 contenedores iguales para hacer los grupos del mundial */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* css general */
+/* Aca meto un anidamiento de todos los elementos dentro del body, para usar el concepto, pero no quiero romper 
+las cosas que ya funcionan, para la entrega final voy a hacer los elementos nuevos, directamente anidados (el contador y el fixture) */
+body {
+  background-color: white;
+  /* Estilos de la pagina ESTADIOS */
+  /* Estilos de la pagina CONTACTO */
+  /* Vista para movil */
+  /* Vista para PC */
+  /* ESTILO VIEJO DE LA PRIMERA ENTREGA SIN CAMBIAR A FLEX Y GRID */ }
+  body header {
+    background-color: #75aadb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+  body #logo {
+    height: 180px;
+    width: 180px; }
+  body #logo-mundial {
+    height: 100%;
+    width: 100%; }
+  body h1 {
+    background-color: #75aadb;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    margin: 10px; }
+  body nav {
+    background-color: #75aadb; }
+  body #ul-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+  body #li-nav {
+    list-style-type: none;
+    margin: 15px; }
+  body a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white; }
+  body a:hover {
+    text-decoration: underline solid white;
+    color: #1e1e80; }
+  body #main-index {
+    height: 1000px;
+    display: grid; }
+  body #contenedor-contador {
+    grid-area: a2;
+    justify-self: center;
+    align-self: center;
+    height: 80%;
+    width: 90%; }
+  body #contador {
+    height: 100%;
+    width: 100%; }
+  body #noticias {
+    grid-area: a5;
+    justify-self: center;
+    align-self: center;
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px; }
+  body #ultimas-noticias {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: start; }
+  body .noticias {
+    text-align: start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  body .titulo-noticias {
+    text-align: start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #parrafo-noticia {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #publicidad1-index {
+    height: 900px;
+    width: 90%;
+    grid-area: a1;
+    justify-self: center;
+    align-self: center; }
+  body #publicidad1 {
+    width: 90%;
+    height: 90%; }
+  body #publicidad2-index {
+    height: 900px;
+    width: 90%;
+    grid-area: a3;
+    justify-self: center;
+    align-self: center; }
+  body #publicidad2 {
+    width: 90%;
+    height: 90%; }
+  body #link-noticia {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    color: blue; }
+  body footer {
+    background-color: #75aadb;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  body #parrafo_footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: center; }
+  body #main-estadios {
+    height: 1000px;
+    display: grid; }
+  body #fondo-messi {
+    width: 100%;
+    height: 1000px;
+    background-image: url(../multimedia/fondo-messi.jpg);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 90%;
+    grid-template-rows: 10% 80%;
+    grid-template-areas: "a1" "a2";
+    align-items: center;
+    justify-content: center; }
+  body #titulo-contacto {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-area: a1; }
+  body #formulario {
+    grid-area: a2;
+    justify-self: start; }
+  @media only screen and (max-width: 600px) {
+    body {
+      /* MEDIA-ESTADIOS-MOVIL */
+      /* PAGINA CONTACTO */
+      /* PAGINA-RECOMENDACIONES-MOVIL */ }
+      body header {
+        border-bottom: solid white; }
+      body h1 {
+        background-color: #75aadb;
+        font-size: 30px; }
+      body #ul-nav {
+        flex-direction: column;
+        align-items: flex-start; }
+      body main {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 40% 60%;
+        grid-template-areas: "a2 a1"  "a5 a1"; }
+      body #publicidad1 {
+        width: 90%;
+        height: 90%;
+        object-fit: cover; }
+      body #publicidad2-index {
+        height: 900px;
+        width: 90%;
+        grid-area: a1;
+        justify-self: center;
+        align-self: center; }
+      body #main-estadios {
+        height: 1200px;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 45% 45%;
+        grid-template-areas: "a1" "a2"  "a3"; }
+      body #titulo-estadios {
+        text-align: center;
+        grid-area: a1; }
+      body #tabla-estadios {
+        grid-area: a2; }
+      body #mapa-qatar {
+        grid-area: a3;
+        margin-bottom: 10px; }
+      body #fondo-messi {
+        height: 700px; }
+      body #formulario {
+        align-self: flex-start; }
+      body #main-reco {
+        height: 1000px;
+        display: grid;
+        grid-template-columns: 80%;
+        grid-template-rows: 10% 40% 40%;
+        grid-template-areas: "a1" "a2"  "a3";
+        justify-content: center;
+        align-content: center; }
+      body #titulo-recomendaciones {
+        grid-area: a1; }
+      body #div-hacer {
+        grid-area: a2; }
+      body #div-nohacer {
+        grid-area: a3; } }
+  @media screen and (min-width: 600px) {
+    body #ul-nav {
+      flex-direction: row; }
+    body main {
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "a1 a2 a3"  "a1 a5 a3";
+      align-items: center;
+      justify-items: center; }
+    body #main-estadios {
+      height: 1000px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 10% 80%;
+      grid-template-areas: "a1 a1" "a2 a3"; }
+    body #titulo-estadios {
+      text-align: center;
+      grid-area: a1; }
+    body #tabla-estadios {
+      grid-area: a2; }
+    body #mapa-qatar {
+      height: 80%;
+      width: 80%;
+      grid-area: a3; }
+    body #main-reco {
+      height: 800px;
+      display: grid;
+      grid-template-columns: 40% 40%;
+      grid-template-rows: 10% 80%;
+      grid-template-areas: "a1 a1" "a2 a3";
+      justify-content: center;
+      align-content: center; } }
+  body #main-reco {
+    height: 800px;
+    display: grid; }
+  body #titulo-recomendaciones {
+    display: flex;
+    grid-area: a1;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #div-hacer {
+    grid-area: a2;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  body #div-nohacer {
+    grid-area: a3;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  body #titulo-hacer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #titulo-nohacer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #li-recomendaciones {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body #ul-recomendaciones {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  body #main-fixture {
+    display: grid;
+    grid-template-columns: 90%;
+    grid-template-rows: 10% 80%;
+    grid-template-areas: "a1" "a2";
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center; }
+  body #titulo-fixture {
+    grid-area: a1;
+    text-align: center; }
+  body #contenedor-fixture {
+    grid-area: a2;
+    height: 90%; }
+  body #fixture {
+    height: 100%;
+    width: 100%; }
